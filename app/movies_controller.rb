@@ -20,6 +20,8 @@ def can_be_created_with_a_hash_of_attributes
       in_theaters: false
   }
   movie = Movie.new(attributes)
+# we use the already giving attributes as an arguments.
+
   movie.save # must save every time you have .new
   movie
 end
@@ -27,6 +29,7 @@ end
 def can_be_created_in_a_block(args = {:title => "Home Alone", :release_date => "1990"})
    #we used the default for hashes... all defalut value are hardcoded
   Movie.create do |m|
+    # we pass in those args
     m.title = args[:title]
     m.release_date = args[:release_date]
   end
